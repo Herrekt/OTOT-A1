@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:16-alpine
 
 # Create app directory
 WORKDIR /app
@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package*.json ./
 COPY package-lock.json* .
 
-RUN npm install
+RUN npm ci --quiet
 # If you are building your code for production
 # RUN npm ci --only=production
 
